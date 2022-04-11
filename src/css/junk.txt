@@ -1,0 +1,141 @@
+.navbar{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    gap: 100px;
+    font-size: 19px;
+    text-decoration: none;
+    background-color: #46aef7;
+    background-image: url("https://s3.us-east-2.amazonaws.com/ui.glass/shape.svg");
+    /* background-color: #5402D4; */
+    width:1100px;
+    border-bottom-left-radius:210px;
+    border-bottom-right-radius:210px;
+    margin: 0 auto;
+    height: 65px;
+    background: rgba(69, 173, 247,1);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4.5px );
+    -webkit-backdrop-filter: blur( 4.5px );
+}
+
+.navbar .Link{
+    position: relative;
+    background-image: linear-gradient(#363636, #363636);
+    background-position: 0 100%; 
+    background-size: 0% 2px;
+    background-repeat: no-repeat;
+    transition:
+        background-size 0.3s,
+        background-position 0s 0.3s,
+        color 0.3s;
+    z-index: 100;
+
+}
+
+
+.Link{
+    text-decoration: none;
+    color: white;
+    z-index: 100;
+}
+
+.Link:hover{
+    color:#363636;
+    background-position: 100% 100%; /*OR bottom right*/
+    background-size: 100% 3px;
+}
+
+.Premium{
+    text-decoration: none;
+    color: #363636;
+    background-image: linear-gradient(#363636, #363636);
+    background-position: 0 100%; 
+    background-size: 0% 2px;
+    background-repeat: no-repeat;
+    transition:
+        background-size 0.3s,
+        background-position 0s 0.3s,
+        color 0.3s;
+}
+
+.Premium:hover{
+    background-position: 100% 100%; /*OR bottom right*/
+    background-size: 100% 3px;
+}
+
+
+
+
+
+
+
+
+
+import React from 'react'
+import { useEffect } from 'react';
+
+
+
+const Blob = () => {
+    useEffect(() =>{
+        let circleone = document.querySelectorAll('#test');
+
+        const rand = (multi) =>{
+            return parseInt(multi * Math.random(),10);
+        }
+
+        let ww = window.innerWidth
+        let wh = window.innerHeight
+        
+        let constraint = Math.min(ww,wh)
+
+        function move(){
+            let place = circleone.forEach((div)=>{
+                let w = rand(constraint - 50);
+                let x = rand(ww - w);
+                let y = rand(wh - w);
+
+                let randomwi = Math.floor(Math.random() * 900) + 100;
+                let randomhe = Math.floor(Math.random() * 900) + 100;
+
+                div.style.width = randomwi + 'px';
+                div.style.height = randomhe + 'px';
+                let random1 = Math.floor(Math.random() * 1220);
+                let random2 = Math.floor(Math.random() * 1220);
+                let random3 = Math.floor(Math.random() * 1220);
+                let random4 = Math.floor(Math.random() * 1220);
+                let random5 = Math.floor(Math.random() * 1220);
+                let random6 = Math.floor(Math.random() * 1220);
+                let random7 = Math.floor(Math.random() * 1220);
+                let random8 = Math.floor(Math.random() * 1220);
+
+                let val = 'px'
+                let con1 =  random1 + val
+                let con2 =  random2 + val
+                let con3 =  random3 + val
+                let con4 =  random4 + val
+                let con5 =  random5 + val
+                let con6 =  random6 + val
+                let con7 =  random7 + val
+                let con8 =  random8 + val
+            
+                div.style.borderRadius =`${con1} ${con2} ${con3} ${con4} / ${con5} ${con6} ${con7} ${con8}`
+            
+                div.style.transition = (rand(2110) + 20400) + 'ms';
+                let randomright = Math.floor(Math.random() * w);
+                let randomtop = Math.floor(Math.random() * w);
+            
+                div.style.background = `white`;
+                div.style.right = randomright + val
+                div.style.top= randomtop + val
+            })
+        }
+        window.setInterval(move, 2000);
+
+    })
+}
+
+export default Blob

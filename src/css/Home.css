@@ -1,0 +1,59 @@
+:root {
+    --main-circle-color: rgba(255, 255, 255, 0.425);
+    --blurrr: blur(100px)
+}
+
+body{
+    height: 200vh;
+}
+
+
+.Main{
+    display: flex;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 200vh;
+    width: 100%;
+    background-color: #141414;
+}
+
+.test{
+    filter: blur(15px);
+}
+
+.MainText{
+    display:flex;
+    align-items: center;
+    color: white;
+    border: 1px solid white;
+    position: absolute;
+    top:150px;
+    left: 0;
+    right: 0;
+    margin-left:auto;
+    margin-right: auto;
+    flex-direction: column;
+    width:max-content;
+    height:500px;
+}
+
+.Explanation{
+    color:gray;
+    text-align: center;
+    line-height: 25px;
+}
+
+.btnmenu{
+    display: flex;
+    gap:10px
+}
+
+.btn{
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.blobs{
+    position: fixed;
+}
